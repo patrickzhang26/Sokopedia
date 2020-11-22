@@ -21,7 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('registration', 'RegistrationController@store')->name('user.register');
+// Route::post('registration', 'RegistrationController@store')->name('user.register');
 
 Route::prefix('admin')->group(function (){
     Route::get('/login', 'AdminLoginController@showLoginForm')->name('admin.login');

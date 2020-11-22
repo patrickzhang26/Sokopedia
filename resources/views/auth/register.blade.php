@@ -11,7 +11,7 @@
             </div>
 
             <div class="card-body">
-            <form class="form-horizontal" action="{{ route('user.register') }}" method="post">
+            <form class="form-horizontal" action="{{ route('register') }}" method="post">
                 @csrf
                 <div class="card-body">
                     @if(session('errors'))
