@@ -2577,7 +2577,7 @@ textarea.form-control.is-invalid {
 
   .form-inline .form-control {
     display: inline-block;
-    width: auto;
+    width: 37.5rem;
     vertical-align: middle;
   }
 
@@ -4535,7 +4535,7 @@ input[type=button].btn-block-register {
   display: inline-block;
   padding-top: 0.32rem;
   padding-bottom: 0.32rem;
-  margin-right: 1rem;
+  margin-left: 1rem;
   font-size: 1.125rem;
   line-height: inherit;
   white-space: nowrap;
@@ -4727,8 +4727,8 @@ input[type=button].btn-block-register {
   }
 
   .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   .navbar-expand-lg > .container,
