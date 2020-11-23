@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Http\Controllers\Auth\Response;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 class LoginController extends Controller
 {
     /*
@@ -35,6 +38,31 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest', [ 'except' => ['logout', 'userLogout']]);
+    }
+
+    protected function sendLoginResponse(Request $request) {  
+        $rememberMeExpireTime = 120;  
+        $rememberTokenCookieKey = Auth::getRecallerName();  
+        
+        Cookie::queue($rememberTokenCookieKey, Cookie::get($rememberTokenCookieKey), $rememberMeExpireTime);  
+
+        $request->session()->regenerate();
+
+        return $this->authenticated($request, $this->guard()->user())  
+            ?: redirect()->intended($this->redirectPath());  
+      } 
+
+    /**
+     * Log the user out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function userLogout()
+    {
+        Auth::guard('web')->logout();
+
+        return redirect('/');
     }
 }
