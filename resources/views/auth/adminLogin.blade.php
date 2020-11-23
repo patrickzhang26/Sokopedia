@@ -1,10 +1,10 @@
 @extends ('template.base')
 
-@section('title','Sokopedia - Login')
+@section('title','Sokopedia - Administrator Login')
 
 @section('container')
 <div class="container">
-    <div class="col-md-10 mt-5 ml-6">
+    <div class="col-md-10 mt-5 mx-auto">
         <div class="card">
             <div class="card-header">
                 Administrator Login

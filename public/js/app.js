@@ -37348,5 +37348,6 @@ module.exports = __webpack_require__(/*! C:\Patrick\KULIAH\SEMESTER5\WP\Project 
 /******/ });
 
 function clickLogOut(){
+  event.preventDefault();
   document.getElementById('logout-form').submit();
 }
