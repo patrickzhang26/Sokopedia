@@ -31,7 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //         Route::get('homepage', 'UserController@index')->name('user.home');
 //     }
 // );
-Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 Route::prefix('admin')->group(function (){
     Route::get('/login', 'AdminLoginController@showLoginForm')->name('admin.login');
