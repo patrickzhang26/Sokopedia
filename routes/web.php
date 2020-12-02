@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('guest.index');
+    return view('admin.panel');
 });
 
 Auth::routes();
@@ -27,5 +27,7 @@ Route::prefix('admin')->group(function (){
     Route::get('/login', 'AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'AdminLoginController@Login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.panel');
+    Route::get('/addproduct', 'AdminController@addproduct')->name('admin.addproduct');
+    Route::get('/addcategory', 'AdminController@addcategory')->name('admin.addcategory');
 });
 

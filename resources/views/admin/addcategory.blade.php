@@ -28,7 +28,7 @@
                 Product
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('admin.addproduct') }}">
+                <a class="dropdown-item" href="#">
                     Add
                 </a>
                 <a class="dropdown-item" href="#">
@@ -42,7 +42,7 @@
                 Category
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('admin.addproduct') }}">
+                <a class="dropdown-item" href="#">
                     Add
                 </a>
                 <a class="dropdown-item" href="#">
@@ -88,7 +88,15 @@
 
 <center>
     <div class="admin_content">
-        <h3>Admin</h3>
+        <form>
+            <div class="form-group">
+                @csrf
+                <h3>Add Category</h3>
+                <p>Name</p>
+                <input class="form-control" type="text" placeholder="Category Name"><br>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="addproduct">Add Category</button>
+            </div>
+        </form>
     </div>
 </center>
 
@@ -108,6 +116,9 @@
         padding-top: 25px; 
         padding-bottom: 25px;
         background-color: white;
+    }
+    .form-control{
+        width: 90%;
     }
 </style>
 </html>
