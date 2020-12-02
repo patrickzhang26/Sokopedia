@@ -5000,12 +5000,12 @@ input[type=button].btn-block-register {
 }
 
 .navbar-green-admin .navbar-brand {
-  color: rgba(138, 207, 25, 0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .navbar-green-admin .navbar-brand:hover,
 .navbar-green-admin .navbar-brand:focus {
-  color:rgba(138, 207, 25, 0.9);
+  color:rgba(255, 255, 255, 0.9);
 }
 
 .navbar-green-admin .navbar-nav .nav-link {
@@ -7165,6 +7165,10 @@ button.bg-dark:focus {
 
 .bg-transparent {
   background-color: transparent !important;
+}
+
+.bg-green {
+  background-color: rgb(0, 255, 0) !important;
 }
 
 .border {
