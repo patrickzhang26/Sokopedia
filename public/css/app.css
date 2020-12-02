@@ -4546,6 +4546,22 @@ input[type=button].btn-block-register {
   text-decoration: none;
 }
 
+.navbar-brand-admin {
+  display: inline-block;
+  padding-top: 0.32rem;
+  padding-bottom: 0.32rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.125rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.navbar-brand-admin:hover,
+.navbar-brand-admin:focus {
+  text-decoration: none;
+}
+
 .navbar-nav {
   display: flex;
   flex-direction: column;

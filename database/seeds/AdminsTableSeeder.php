@@ -16,7 +16,11 @@ class AdminsTableSeeder extends Seeder
             [   'name'=>'Admin',
                 'email'=>'admin@yahoo.com',
                 'password'=> 'admin123'
-            ]
-            ]);
+        ],
+        [   'name'=>'Administrator',
+                'email'=>'administrator@example.com',
+                'password'=> 'example'
+        ]
+        ]);
     }
 }

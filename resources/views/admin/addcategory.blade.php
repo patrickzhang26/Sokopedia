@@ -16,7 +16,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-green-admin bg-green">
-  <a class="navbar-brand" href="{{ route('admin.panel') }}" >Admin</a>
+  <a class="navbar-brand-admin" href="{{ route('admin.panel') }}" >Admin</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
