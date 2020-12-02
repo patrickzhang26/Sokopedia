@@ -65,12 +65,17 @@ section {
 }
 
 /* style tambahan april mulai*/
+#navbarDropdown{
+  color: white;
+}
+
 .admin_content{
-  width: 800px; 
+  width: 75%; 
   padding-top: 25px; 
   padding-bottom: 25px;
   background-color: white;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .form-control-admin{
@@ -99,8 +104,11 @@ section {
   line-height: inherit;
   white-space: nowrap;
   color: white;
+  text-decoration: none;
 }
 
+/* table width jadi 90%*/
+/* table th text-align jadi center */
 /* style tambahan april selesai*/
 
 body {
@@ -216,7 +224,7 @@ a {
 
 a:hover {
   color: #1d68a7;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:not([href]):not([class]) {
@@ -1808,7 +1816,7 @@ pre code {
 }
 
 .table {
-  width: 100%;
+  width: 90%;
   margin-bottom: 1rem;
   color: #212529;
 }
@@ -1846,6 +1854,10 @@ pre code {
 .table-bordered thead th,
 .table-bordered thead td {
   border-bottom-width: 2px;
+}
+
+.table-bordered th{
+  text-align: center;
 }
 
 .table-borderless th,

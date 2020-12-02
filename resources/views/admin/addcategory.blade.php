@@ -31,7 +31,7 @@
                         <a class="dropdown-item" href="{{ route('admin.addproduct') }}">
                             Add
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ route('admin.listproduct') }}">
                             Show All
                         </a>
                     </div>
@@ -42,10 +42,10 @@
                         Category
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('admin.addproduct') }}">
+                        <a class="dropdown-item" href="{{ route('admin.addcategory') }}">
                             Add
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ route('admin.listcategory') }}">
                             Show all
                         </a>
                     </div>
@@ -90,21 +90,4 @@
 
 </body>
 
-<!-- <style>
-    body{
-        background-color: #ecf3f3;
-    }
-    #navbarDropdown{
-        color: white;
-    }
-    .admin_content{
-        width: 800px; 
-        padding-top: 25px; 
-        padding-bottom: 25px;
-        background-color: white;
-    }
-    .form-control{
-        width: 90%;
-    }
-</style> -->
 </html>

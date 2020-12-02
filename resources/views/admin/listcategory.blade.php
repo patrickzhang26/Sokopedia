@@ -74,7 +74,63 @@
 
     <center>
         <div class="admin_content">
-            <h3>Admin</h3>
+            <h3>Category</h3>
+            <table class="table table-bordered">
+                <tr><th><a data-toggle="collapse" href="#handphoneCategory" aria-expanded="false" aria-controls="handphoneCategory">Handphone</a></th></tr>
+                <tr><th><a data-toggle="collapse" href="#laptopCategory" aria-expanded="false" aria-controls="laptopCategory">Laptop</a></th></tr>
+                <tr><th><a data-toggle="collapse" href="#tvCategory"  aria-expanded="false" aria-controls="tvCategory">TV</a></th></tr>
+            </table><br>
+            <div class="collapse multi-collapse" id="handphoneCategory">
+                <h3>Handphone Products</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product ID</th>
+                            <th scope="col">Product Image</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Product Price</th>
+                            <th scope="col">Product Description</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <!-- isi nanti, ada di notepad -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="collapse multi-collapse" id="laptopCategory">
+                <h3>Laptop Products</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product ID</th>
+                            <th scope="col">Product Image</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Product Price</th>
+                            <th scope="col">Product Description</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <!-- isi nanti, ada di notepad -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="collapse multi-collapse" id="tvCategory">
+                <h3>TV Products</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product ID</th>
+                            <th scope="col">Product Image</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Product Price</th>
+                            <th scope="col">Product Description</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <!-- isi nanti, ada di notepad -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </center>
 

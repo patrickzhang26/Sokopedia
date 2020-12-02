@@ -74,7 +74,23 @@
 
     <center>
         <div class="admin_content">
-            <h3>Admin</h3>
+            <h3>Product</h3><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Product ID</th>
+                        <th scope="col">Product Image</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Category</th>
+                        <th scope="col">Product Price</th>
+                        <th scope="col">Product Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <!-- isi nanti, ada di notepad -->
+                </tbody>
+            </table>
         </div>
     </center>
 
