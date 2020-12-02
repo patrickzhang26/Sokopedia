@@ -38,5 +38,7 @@ Route::prefix('admin')->group(function (){
     Route::post('/login', 'AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.panel');
     Route::get('/logout','AdminLoginController@logout')->name('admin.logout');
+    Route::get('/addproduct', 'AdminController@addproduct')->name('admin.addproduct');
+    Route::get('/addcategory', 'AdminController@addcategory')->name('admin.addcategory');
 });
 

@@ -4546,6 +4546,27 @@ input[type=button].btn-block-register {
   text-decoration: none;
 }
 
+a.navbar-brand-admin {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-brand-admin {
+  display: inline-block;
+  padding-top: 0.32rem;
+  padding-bottom: 0.32rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.125rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.navbar-brand-admin:hover,
+.navbar-brand-admin:focus {
+  text-decoration: none;
+}
+
 .navbar-nav {
   display: flex;
   flex-direction: column;
@@ -5000,12 +5021,12 @@ input[type=button].btn-block-register {
 }
 
 .navbar-green-admin .navbar-brand {
-  color: rgba(138, 207, 25, 0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .navbar-green-admin .navbar-brand:hover,
 .navbar-green-admin .navbar-brand:focus {
-  color:rgba(138, 207, 25, 0.9);
+  color:rgba(255, 255, 255, 0.9);
 }
 
 .navbar-green-admin .navbar-nav .nav-link {
@@ -7165,6 +7186,10 @@ button.bg-dark:focus {
 
 .bg-transparent {
   background-color: transparent !important;
+}
+
+.bg-green {
+  background-color: rgb(0, 255, 0) !important;
 }
 
 .border {
