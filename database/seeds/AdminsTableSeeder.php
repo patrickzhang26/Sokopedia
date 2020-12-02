@@ -13,10 +13,12 @@ class AdminsTableSeeder extends Seeder
     public function run()
     {
         DB::table('admins')->insert([
-            [   'name'=>'Admin',
-                'email'=>'admin@yahoo.com',
-                'password'=> 'admin123'
-            ]
-            ]);
+            ['name'=>'Admin',
+            'email'=>'admin@yahoo.com',
+            'password'=> 'admin123'],
+            ['name'=>'Administrator',
+            'email'=>'administrator@example.com',
+            'password'=> 'example']
+        ]);
     }
 }
