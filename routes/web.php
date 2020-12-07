@@ -16,8 +16,6 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'GuestController@index')->middleware('guest');
 
-// Route::get('/', 'HomeController@index');
-
 Auth::routes();
 
 Route::get('/role/home', 'HomeController@index')->name('home');
