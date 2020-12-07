@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
+    <title>$okopedia</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,20 +22,17 @@
   </button>
 
   <div class="collapse navbar-collapse text-right" id="navbarToggler">
-    <ul class="navbar-nav ml-auto">
+        @if (Route::has('/'))
+        <form class="form-inline my-2 my-lg-0 mx-auto">
+            @csrf
+            <input class="form-control mx-lg-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        @endif
+        <ul class="navbar-nav ml-auto">
                         @guest
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Login As
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('admin.login') }}">
-                                        Admin
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('login') }}">
-                                        User
-                                    </a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Login</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -60,11 +57,12 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+        </ul>
   </div>
 </nav>
 
 @yield('container')
+
 
 </body>
 </html>

@@ -24,12 +24,21 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
+    public function redirectTo() {
+        $role = Auth::user()->role; 
+        switch ($role) {
+          case 'admin':
+            return '/admin/home';
+            break;
+          case 'user':
+            return '/user/home';
+            break; 
+      
+          default:
+            return '/'; 
+          break;
+        }
+      }
 
     /**
      * Create a new controller instance.
@@ -46,6 +55,8 @@ class LoginController extends Controller
         $rememberTokenCookieKey = Auth::getRecallerName();  
         
         Cookie::queue($rememberTokenCookieKey, Cookie::get($rememberTokenCookieKey), $rememberMeExpireTime);  
+        Cookie::queue(Cookie::make('email', Cookie::get('email'), 120));
+        Cookie::queue('password', Cookie::get('password'), 120);
 
         $request->session()->regenerate();
 

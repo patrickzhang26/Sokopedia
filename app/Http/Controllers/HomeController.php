@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -23,6 +24,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $role = Auth::user()->role; 
+
+            switch ($role) {
+                case 'admin':
+                    return redirect()->route('admin.panel');
+                    break;
+
+                case 'user':
+                    return redirect()->route('user.home');
+                    break;
+                
+                default:
+                    return redirect('guest.index');
+                    break;
+            }
     }
 }

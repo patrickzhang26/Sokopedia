@@ -14,29 +14,21 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.index');
-});
+Route::get('/', 'GuestController@index')->middleware('guest');
+
+// Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-// Route::post('registration', 'RegistrationController@store')->name('user.register');
+Route::get('/role/home', 'HomeController@index')->name('home');
 
-// Route::group(
-//     [
-//         'name' => 'user.',
-//         'prefix' => 'user',
-//     ], function () {
-//         Route::get('homepage', 'UserController@index')->name('user.home');
-//     }
-// );
-Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+Route::group(['prefix' => 'user', 'middleware' => ['role:user']], function() {
+    Route::get('/home','UserController@index')->name('user.home');
+    Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+});
 
-Route::prefix('admin')->group(function (){
-    Route::get('/login', 'AdminLoginController@showLoginForm')->name('admin.login');
-    Route::post('/login', 'AdminLoginController@login')->name('admin.login.submit');
-    Route::get('/', 'AdminController@index')->name('admin.panel');
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
+    Route::get('/home', 'AdminController@index')->name('admin.panel');
     Route::get('/logout','AdminLoginController@logout')->name('admin.logout');
     Route::get('/addproduct', 'AdminController@addproduct')->name('admin.addproduct');
     Route::get('/addcategory', 'AdminController@addcategory')->name('admin.addcategory');

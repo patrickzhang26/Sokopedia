@@ -42,7 +42,7 @@
                     Category
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('admin.addproduct') }}">
+                    <a class="dropdown-item" href="{{ route('admin.addcategory') }}">
                         Add
                     </a>
                     <a class="dropdown-item" href="#">
