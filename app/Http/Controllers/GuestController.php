@@ -4,22 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class GuestController extends Controller
 {
-    
     /**
-     * Create a new controller instance.
+     * Display a listing of the resource.
      *
-     * @return void
+     * @return \Illuminate\Http\Response
      */
-    public function __construct()
+    public function index()
     {
-        $this->middleware('auth');
+        return view('guest.home');
     }
-
-    public function index() {
-        return view('user.index');
-      }
 
     /**
      * Show the form for creating a new resource.

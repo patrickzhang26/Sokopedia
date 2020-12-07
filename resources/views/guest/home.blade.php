@@ -16,7 +16,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-green bg-white">
-  <a class="navbar-brand" href="{{ route('home') }}">$okopedia</a>
+  <a class="navbar-brand" href="/">$okopedia</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -27,14 +27,24 @@
             <input class="form-control mx-lg-2" type="search" placeholder="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-    <ul class="navbar-nav ml-0">
+        <ul class="navbar-nav ml-0">
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                </li>
+                            @endif
+                        <!-- @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('user.logout') }}"
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="clickLogOut()">
                                         Logout
                                     </a>
@@ -43,10 +53,13 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
-                    </ul>
+                            </li> -->
+                        @endguest
+        </ul>
   </div>
 </nav>
+
+@yield('container')
 
 </body>
 </html>
