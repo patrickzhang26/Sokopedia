@@ -22,12 +22,10 @@ Route::get('/role/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'user', 'middleware' => ['role:user']], function() {
     Route::get('/home','UserController@index')->name('user.home');
-    Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/home', 'AdminController@index')->name('admin.panel');
-    Route::get('/logout','AdminLoginController@logout')->name('admin.logout');
     Route::get('/addproduct', 'AdminController@addproduct')->name('admin.addproduct');
     Route::get('/addcategory', 'AdminController@addcategory')->name('admin.addcategory');
 });

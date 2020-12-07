@@ -70,7 +70,7 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function userLogout()
+    public function logout()
     {
         Auth::guard('web')->logout();
 
