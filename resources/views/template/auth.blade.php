@@ -22,11 +22,6 @@
   </button>
 
   <div class="collapse navbar-collapse text-right" id="navbarToggler">
-        <form class="form-inline my-2 my-lg-0 mx-auto">
-            @csrf
-            <input class="form-control mx-lg-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
         <ul class="navbar-nav ml-auto">
                         @guest
                             <li class="nav-item">
@@ -58,8 +53,6 @@
         </ul>
   </div>
 </nav>
-
-@yield('carousel')
 
 @yield('container')
 
