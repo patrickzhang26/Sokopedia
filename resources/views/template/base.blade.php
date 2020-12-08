@@ -61,6 +61,8 @@
   </div>
 </nav>
 
+@yield('carousel')
+
 @yield('container')
 
 

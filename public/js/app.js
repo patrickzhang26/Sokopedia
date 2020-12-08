@@ -37351,3 +37351,8 @@ function clickLogOut(){
   event.preventDefault();
   document.getElementById('logout-form').submit();
 }
+
+// auto slide carousel
+$('.carousel').carousel({
+  interval: 2000
+})
