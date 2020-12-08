@@ -15,6 +15,7 @@ class CreateTransactionheadersTable extends Migration
     {
         Schema::create('transactionheaders', function (Blueprint $table) {
             $table->id();
+            $table->string('email');
             $table->timestamps();
         });
     }
