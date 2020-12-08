@@ -24,6 +24,6 @@ class UsersTableSeeder extends Seeder
                 'password'=> Hash::make('admin123'),
                 'role'=>'admin'
             ]
-            ]);
+        ]);
     }
 }

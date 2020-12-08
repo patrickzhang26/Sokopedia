@@ -20,21 +20,4 @@
 
 </body>
 
-<style>
-    body{
-        background-color: #ecf3f3;
-    }
-    #navbarDropdown{
-        color: white;
-    }
-    .admin_content{
-        width: 800px; 
-        padding-top: 25px; 
-        padding-bottom: 25px;
-        background-color: white;
-    }
-    .form-control{
-        width: 90%;
-    }
-</style>
 </html>

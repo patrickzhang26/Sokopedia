@@ -31,7 +31,7 @@
                     <a class="dropdown-item" href="{{ route('admin.addproduct') }}">
                         Add
                     </a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{ route('admin.listproduct') }}">
                         Show All
                     </a>
                 </div>
@@ -45,7 +45,7 @@
                     <a class="dropdown-item" href="{{ route('admin.addcategory') }}">
                         Add
                     </a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{ route('admin.listcategory') }}">
                         Show all
                     </a>
                 </div>
