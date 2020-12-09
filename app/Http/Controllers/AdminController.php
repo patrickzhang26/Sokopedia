@@ -31,7 +31,9 @@ class AdminController extends Controller
 
     public function addproduct()
     {
-        return view('admin.addproduct');
+        $categories = DB::table('categories')->get();
+
+        return view('admin.addproduct', ['categories'=>$categories]);
     }
 
     public function listproduct()
@@ -48,10 +50,13 @@ class AdminController extends Controller
 
     public function listcategory()
     {
-        $handphone = DB::table('products')->where('category','Handphone')->get();
-        $laptop = DB::table('products')->where('category','Laptop')->get();
-        $tv = DB::table('products')->where('category','TV')->get();
+        // $handphone = DB::table('products')->where('category','Handphone')->get();
+        // $laptop = DB::table('products')->where('category','Laptop')->get();
+        // $tv = DB::table('products')->where('category','TV')->get();
+
+        $categories = DB::table('categories')->get();
+        $products = DB::table('products')->get();
         
-        return view('admin.listcategory', ['handphone'=>$handphone, 'laptop'=>$laptop, 'tv'=>$tv]);
+        return view('admin.listcategory', ['products'=>$products, 'categories'=>$categories]);
     }
 }
