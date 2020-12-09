@@ -31,7 +31,7 @@
                                     @if($prod->category == $cat->name){
                                         <tr>
                                             <td>{{$prod->id}}</td>
-                                            <td><img src="{{asset('storage/images/'.$prod->image)}}" alt=""></td>
+                                            <td><img class="product-img" src="{{asset('storage/images/'.$prod->image)}}" alt=""></td>
                                             <td>{{$prod->name}}</td>
                                             <td>{{$prod->price}}</td>
                                             <td>{{$prod->description}}</td>
