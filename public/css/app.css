@@ -64,6 +64,53 @@ section {
   display: block;
 }
 
+/* style tambahan april mulai*/
+#navbarDropdown{
+  color: white;
+}
+
+.admin_content{
+  width: 75%; 
+  padding-top: 25px; 
+  padding-bottom: 25px;
+  background-color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.form-control-admin{
+  display: block;
+  width: 90%;
+  height: calc(1.6em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.navbar-brand-admin{
+  font-weight: bold;
+  display: inline-block;
+  padding-top: 0.32rem;
+  padding-bottom: 0.32rem;
+  margin-left: 3rem;
+  font-size: 1.125rem;
+  line-height: inherit;
+  white-space: nowrap;
+  color: white;
+  text-decoration: none;
+}
+
+/* table width jadi 90%*/
+/* table th text-align jadi center */
+/* style tambahan april selesai*/
+
 body {
   margin: 0;
   font-family: "Nunito", sans-serif;
@@ -212,6 +259,8 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  height: 120px;
+  width: 120px;
 }
 
 svg {
@@ -221,6 +270,7 @@ svg {
 
 table {
   border-collapse: collapse;
+  width: 90%;
 }
 
 caption {
@@ -233,7 +283,7 @@ caption {
 
 th {
   text-align: inherit;
-  text-align: -webkit-match-parent;
+  /* text-align: -webkit-match-parent; */
 }
 
 label {
@@ -1769,9 +1819,13 @@ pre code {
 }
 
 .table {
-  width: 100%;
+  width: 90%;
   margin-bottom: 1rem;
   color: #212529;
+}
+
+.table th{
+  text-align: center;
 }
 
 .table th,
@@ -1796,17 +1850,19 @@ pre code {
 }
 
 .table-bordered {
-  border: 1px solid #dee2e6;
+  border: 1px solid black;
 }
 
 .table-bordered th,
 .table-bordered td {
-  border: 1px solid #dee2e6;
+  border: 1px solid black;
 }
 
 .table-bordered thead th,
 .table-bordered thead td {
+  vertical-align: middle;
   border-bottom-width: 2px;
+  border-bottom: 2px solid black;
 }
 
 .table-borderless th,
@@ -11211,4 +11267,8 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+#navbarDropdown2{
+  color: white;
 }

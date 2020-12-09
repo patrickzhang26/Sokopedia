@@ -1,4 +1,4 @@
-@extends ('template.base')
+@extends ('template.auth')
 
 @section('title','Sokopedia - Register')
 

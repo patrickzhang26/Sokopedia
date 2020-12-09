@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$okopedia -Admin Panel</title>
+    <title>$okopedia</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -15,21 +15,31 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-green-admin bg-dark">
-  <a class="navbar-brand" href="{{ route('admin.panel') }}">$okopedia</a>
+<nav class="navbar navbar-expand-lg navbar-green bg-white">
+  <a class="navbar-brand" href="/">$okopedia</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse text-right" id="navbarToggler">
-    <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto">
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                </li>
+                            @endif
+                        @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('admin.logout') }}"
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="clickLogOut()">
                                         Logout
                                     </a>
@@ -38,30 +48,14 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>                        
-    </ul>
+                            </li>
+                        @endguest
+        </ul>
   </div>
 </nav>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">ADMIN Dashboard</div>
+@yield('container')
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in as <strong>ADMIN</strong>!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 </body>
 </html>
