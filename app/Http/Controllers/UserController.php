@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Product;
 
 class UserController extends Controller
 {
@@ -54,7 +55,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $selected = Product::where('id','like',$id)->get();
+
+        return view('user.detailproduct',['selected' => $selected]);
     }
 
     /**

@@ -11341,3 +11341,21 @@ a.text-dark:focus {
   margin-top: 30px;
   text-align: center;
 }
+
+.container-product-detail {
+  margin-top: 80px;
+  justify-content: center;
+}
+
+.container-product {
+  background-color: white;
+}
+
+.container-image {
+  background-color: white;
+}
+
+.img-detail {
+  width: 450px;
+  height: 600px;
+}
