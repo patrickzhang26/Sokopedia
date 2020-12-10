@@ -23,11 +23,11 @@
   </button>
 
   <div class="collapse navbar-collapse text-right" id="navbarToggler">
-        <form class="form-inline my-2 my-lg-0 mx-auto">
+        <form class="form-inline my-2 my-lg-0 mx-auto" action="{{ route('user.search') }}" method="GET">
             @csrf
-            <input class="form-control mx-lg-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <a href="{{ route('user.cart') }}" class="btn btn-green my-2 my-sm-0 ml-2" >Cart <span class="badge badge-light">0</span></a>
+            <input class="form-control mx-lg-2" type="text" name="search" value="{{ old('search') }}" placeholder="Search" >
+            <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
+            <a href="{{ route('user.cart') }}" class="btn btn-green my-2 my-sm-0 ml-2" >Cart<span class="badge badge-light ml-1">0</span></a>
             <a href="{{ route('user.history') }}" class="btn btn-green my-2 my-sm-0 ml-2" >History</a>
         </form>
         <ul class="navbar-nav ml-0">

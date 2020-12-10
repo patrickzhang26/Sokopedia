@@ -24,7 +24,15 @@ class UserController extends Controller
         $products = DB::table('products')->paginate(3);
 
         return view('user.index', ['products'=>$products]);
-      }
+    }
+
+    public function search(Request $request){
+        $search = $request->search;
+
+        $products = Product::where('name','like',"%".$search."%")->paginate(3);
+
+        return view('user.search',['products' => $products]);
+    }
 
     /**
      * Show the form for creating a new resource.

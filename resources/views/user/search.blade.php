@@ -1,47 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$okopedia</title>
+@extends('template.base')
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+@section('title','$okopedia')
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-</head>
-
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-green bg-white">
-  <a class="navbar-brand" href="/">$okopedia</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse text-right" id="navbarToggler">
-        <form class="form-inline my-2 my-lg-0 mx-auto" action="{{ route('guest.search') }}" method="GET">
-            @csrf
-            <input class="form-control mx-lg-2" type="text" name="search" value="{{ old('search') }}" placeholder="Search" >
-            <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
-        </form>
-        <ul class="navbar-nav ml-0">
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Login</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
-                                </li>
-                            @endif
-                        @endguest
-        </ul>
-  </div>
-</nav>
-
+@section('carousel')
 <div id="carouselSokopedia" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselSokopedia" data-slide-to="0" class="active"></li>
@@ -72,7 +33,9 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+@endsection
 
+@section('container')
 <div class="container h-100">
     <div class="container-fluid container-gap">
         <div class="card-deck">
@@ -94,6 +57,4 @@
         </div>
     </div>
 </div>
-
-</body>
-</html>
+@endsection
