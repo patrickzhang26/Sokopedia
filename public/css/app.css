@@ -11348,7 +11348,7 @@ a.text-dark:focus {
 }
 
 .container-product {
-  background-color: white;
+  background-color: rgb(230, 230, 230);
 }
 
 .container-image {
@@ -11357,5 +11357,10 @@ a.text-dark:focus {
 
 .img-detail {
   width: 450px;
-  height: 600px;
+  height: 400px;
+}
+
+.btn-left{
+  margin-left: 2.5rem !important;
+  margin-top: 50px;
 }

@@ -27,7 +27,7 @@
             @csrf
             <input class="form-control mx-lg-2" type="search" placeholder="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <a href="{{ route('user.cart') }}" class="btn btn-green my-2 my-sm-0 ml-2" >Cart <span class="badge badge-light">4</span></a>
+            <a href="{{ route('user.cart') }}" class="btn btn-green my-2 my-sm-0 ml-2" >Cart <span class="badge badge-light">0</span></a>
             <a href="{{ route('user.history') }}" class="btn btn-green my-2 my-sm-0 ml-2" >History</a>
         </form>
         <ul class="navbar-nav ml-0">
@@ -59,6 +59,7 @@
                     <h1 class="text-right mt-5">{{ $s->name }}</h1>
                     <h3 class="text-right mt-5">Price: IDR {{ $s->price }}</h3>
                     <h5 class="text-right mt-5">Description: {{ $s->description}}</h5>
+                    <a href="{{ url('user/detail/cart/'.$s->id) }}" class="btn btn-green btn-left" >Add To Cart</a>
             </div>
         @endforeach
     </div>
