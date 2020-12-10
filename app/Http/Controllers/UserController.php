@@ -68,6 +68,13 @@ class UserController extends Controller
         return view('user.detailproduct',['selected' => $selected]);
     }
 
+    public function addCart($id)
+    {
+        $selected = Product::where('id','like',$id)->get();
+
+        return view('user.addtocart',['selected' => $selected]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

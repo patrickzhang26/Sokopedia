@@ -56,10 +56,11 @@
                     <img src="{{asset('storage/images/'.$s->image)}}" class="img img-detail" alt="{{$s->image}}">
                 </div>
                 <div class="col-md-6 container-product">
-                    <h1 class="text-right mt-5">{{ $s->name }}</h1>
-                    <h3 class="text-right mt-5">Price: IDR {{ $s->price }}</h3>
-                    <h5 class="text-right mt-5">Description: {{ $s->description}}</h5>
+                    <h1 class="mt-5 detail-title ml-3">{{ $s->name }}</h1>
+                    <h4 class="mt-5 pricetag ml-3">Price: IDR. {{ $s->price }}</h4>
+                    <h5 class="mt-5 ml-3">Description: {{ $s->description}}</h5>
                     <a href="{{ url('user/detail/cart/'.$s->id) }}" class="btn btn-green btn-left" >Add To Cart</a>
+                </div>
             </div>
         @endforeach
     </div>

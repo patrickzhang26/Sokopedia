@@ -2207,6 +2207,11 @@ pre code {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.form-control-user{
+  display: inline;
+  width: 30%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .form-control {
     transition: none;
@@ -11361,6 +11366,16 @@ a.text-dark:focus {
 }
 
 .btn-left{
-  margin-left: 2.5rem !important;
+  margin-left: 1rem !important;
   margin-top: 50px;
+}
+
+.pricetag {
+  border-bottom: 0.3px solid rgba(128, 128, 128, 0.63);
+  padding-bottom: 15px;
+}
+
+.detail-title{
+  border-bottom: 0.3px solid rgba(128, 128, 128, 0.63);
+  padding-bottom: 15px;
 }
