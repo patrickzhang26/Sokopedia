@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-
+use App\Product;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -17,6 +17,14 @@ class GuestController extends Controller
         $products = DB::table('products')->paginate(3);
 
         return view('guest.home', ['products'=>$products]);
+    }
+
+    public function search(Request $request){
+        $search = $request->search;
+
+        $products = Product::where('name','like',"%".$search."%")->paginate(3);
+
+        return view('guest.search',['products' => $products]);
     }
 
     /**

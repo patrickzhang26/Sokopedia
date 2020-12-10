@@ -24,7 +24,15 @@ class UserController extends Controller
         $products = DB::table('products')->paginate(3);
 
         return view('user.index', ['products'=>$products]);
-      }
+    }
+
+    public function search(Request $request){
+        $search = $request->search;
+
+        $products = Product::where('name','like',"%".$search."%")->paginate(3);
+
+        return view('user.search',['products' => $products]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -58,6 +66,13 @@ class UserController extends Controller
         $selected = Product::where('id','like',$id)->get();
 
         return view('user.detailproduct',['selected' => $selected]);
+    }
+
+    public function addCart($id)
+    {
+        $selected = Product::where('id','like',$id)->get();
+
+        return view('user.addtocart',['selected' => $selected]);
     }
 
     /**

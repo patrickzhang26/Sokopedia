@@ -57,9 +57,13 @@
                 </div>
                 <div class="col-md-6 container-product">
                     <h1 class="mt-5 detail-title ml-3">{{ $s->name }}</h1>
-                    <h4 class="mt-5 pricetag ml-3">Price: IDR. {{ $s->price }}</h4>
-                    <h5 class="mt-5 ml-3">Description: {{ $s->description}}</h5>
-                    <a href="{{ url('user/detail/cart/'.$s->id) }}" class="btn btn-green btn-left" >Add To Cart</a>
+                    <h4 class="mt-4 pricetag ml-3">Price: IDR. {{ $s->price }}</h4>
+                    <h5 class="mt-4 ml-3">Description: {{ $s->description}}</h5>                    
+                    <div class="col-10">
+                    <label for="quantity-input" class="col-0 col-form-label mt-4">Quantity: </label>
+                        <input class="form-control form-control-user" type="number" value="0" id="quantity-input">
+                    </div>
+                    <a href="{{ url('user/detail/cart/add/'.$s->id) }}" class="btn btn-green btn-left" >Add To Cart</a>
                 </div>
             </div>
         @endforeach
