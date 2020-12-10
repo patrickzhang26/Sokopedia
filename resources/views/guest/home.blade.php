@@ -73,5 +73,27 @@
     </a>
 </div>
 
+<div class="container h-100">
+    <div class="container-fluid container-gap">
+        <div class="card-deck">
+            @foreach($products as $p)
+            <div class="card">
+                <img class="card-img-top product-img-store mx-auto" src="{{asset('storage/images/'.$p->image)}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $p->name }}</h5>
+                <p class="card-text">IDR {{ $p->price }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url('user/detail/'.$p->id) }}" class="btn btn-green btn-lg btn-block">Product Detail</a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        <div class="pagination center-links">
+            {{$products->withQueryString()->links()}}
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

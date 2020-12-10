@@ -1,5 +1,7 @@
 @extends('template.base')
 
+@section('title','$okopedia')
+
 @section('carousel')
 <div id="carouselSokopedia" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -34,22 +36,24 @@
 @endsection
 
 @section('container')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container h-100">
+    <div class="container-fluid container-gap">
+        <div class="card-deck">
+            @foreach($products as $p)
             <div class="card">
-                <div class="card-header">Dashboard</div>
-
+                <img class="card-img-top product-img-store mx-auto" src="{{asset('storage/images/'.$p->image)}}" alt="Card image cap">
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in as <strong>USER</strong>!
+                    <h5 class="card-title">{{ $p->name }}</h5>
+                <p class="card-text">IDR {{ $p->price }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ url('user/detail/'.$p->id) }}" class="btn btn-green btn-lg btn-block">Product Detail</a>
                 </div>
             </div>
+            @endforeach
+        </div>
+        <div class="pagination center-links">
+            {{$products->withQueryString()->links()}}
         </div>
     </div>
 </div>

@@ -22,6 +22,9 @@ Route::get('/role/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'user', 'middleware' => ['role:user']], function() {
     Route::get('/home','UserController@index')->name('user.home');
+    Route::get('/detail/{id}','UserController@show');
+    Route::get('/cart','UserController@showCart')->name('user.cart');
+    Route::get('/history','UserController@showHistory')->name('user.history');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {

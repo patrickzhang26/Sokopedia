@@ -265,8 +265,16 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+}
+
+.product-img {
   height: 120px;
   width: 120px;
+}
+
+.product-img-store {
+  height: 240px;
+  width: 50px;
 }
 
 svg {
@@ -640,6 +648,10 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.container-gap {
+  margin-top: 50px;
 }
 
 @media (min-width: 576px) {
@@ -5249,7 +5261,7 @@ a.navbar-brand-admin {
 .card-img-top,
 .card-img-bottom {
   flex-shrink: 0;
-  width: 100%;
+  width: 50%;
 }
 
 .card-img,
@@ -5266,6 +5278,7 @@ a.navbar-brand-admin {
 
 .card-deck .card {
   margin-bottom: 15px;
+  height: 500px;
 }
 
 @media (min-width: 576px) {
@@ -5420,6 +5433,7 @@ a.navbar-brand-admin {
   display: flex;
   padding-left: 0;
   list-style: none;
+  justify-content: center;
   border-radius: 0.25rem;
 }
 
@@ -11280,4 +11294,68 @@ a.text-dark:focus {
 
 #navbarDropdown2{
   color: white;
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #5bdc34;
+  border-color: #5bdc34;
+}
+
+.btn-green:hover {
+  color: #fff;
+  background-color: #22c759;
+  border-color: #22c759;
+}
+
+.btn-green:focus,
+.btn-green.focus {
+  color: #fff;
+  background-color: #5bdc34;
+  border-color: #5bdc34;
+  box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
+}
+
+.btn-green.disabled,
+.btn-green:disabled {
+  color: #fff;
+  background-color: #5bdc34;
+  border-color: #5bdc34;
+}
+
+.btn-green:not(:disabled):not(.disabled):active,
+.btn-green:not(:disabled):not(.disabled).active,
+.show > .btn-green.dropdown-toggle {
+  color: #fff;
+  background-color: #5bdc34;
+  border-color: #5bdc34;
+}
+
+.btn-green:not(:disabled):not(.disabled):active:focus,
+.btn-green:not(:disabled):not(.disabled).active:focus,
+.show > .btn-green.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(82, 225, 137, 0.5);
+}
+
+.center-links {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.container-product-detail {
+  margin-top: 80px;
+  justify-content: center;
+}
+
+.container-product {
+  background-color: white;
+}
+
+.container-image {
+  background-color: white;
+}
+
+.img-detail {
+  width: 450px;
+  height: 600px;
 }
