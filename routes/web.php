@@ -29,9 +29,13 @@ Route::group(['prefix' => 'user', 'middleware' => ['role:user']], function() {
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/home', 'AdminController@index')->name('admin.panel');
-    Route::get('/addproduct', 'AdminController@addproduct')->name('admin.addproduct');
+    Route::get('/addproduct', 'AdminController@addproduct1')->name('admin.addproduct1');
     Route::get('/listproduct', 'AdminController@listproduct')->name('admin.listproduct');
-    Route::get('/addcategory', 'AdminController@addcategory')->name('admin.addcategory');
-    Route::get('/listcategory', 'AdminController@listcategory')->name('admin.listcategory');    
+    Route::get('/addcategory', 'AdminController@addcategory1')->name('admin.addcategory1');
+    Route::get('/listcategory', 'AdminController@listcategory')->name('admin.listcategory');
+    Route::get('/listproduct/delete/{id}', 'AdminController@deleteproduct');
+    
+    Route::post('/addproduct', 'AdminController@addproduct2')->name('admin.addproduct2');
+    Route::post('/addcategory', 'AdminController@addcategory2')->name('admin.addcategory2');
 });
 

@@ -21,15 +21,15 @@
                             </tr>
                         </thead>
                         <tbody> 
-                            @foreach($products as $p)
+                            @foreach($products as $prod)
                                 <tr>
-                                    <td>{{$p->id}}</td>
-                                    <td><img class="product-img" src="{{asset('storage/images/'.$p->image)}}" alt=""></td>
-                                    <td>{{$p->name}}</td>
-                                    <td>{{$p->category}}</td>
-                                    <td>{{$p->price}}</td>
-                                    <td>{{$p->description}}</td>
-                                    <td><a href="#"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                                    <td>{{$prod->id}}</td>
+                                    <td><img class="product-img" src="{{asset('storage/images/'.$prod->image)}}" alt=""></td>
+                                    <td>{{$prod->name}}</td>
+                                    <td>{{$prod->category}}</td>
+                                    <td>{{$prod->price}}</td>
+                                    <td>{{$prod->description}}</td>
+                                    <td><a class="btn btn-danger" href="/admin/listproduct/delete/{{$prod->id}} }}">Delete</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

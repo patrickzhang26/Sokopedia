@@ -28,7 +28,7 @@
                     Product
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('admin.addproduct') }}">
+                    <a class="dropdown-item" href="{{ route('admin.addproduct1') }}">
                         Add
                     </a>
                     <a class="dropdown-item" href="{{ route('admin.listproduct') }}">
@@ -42,7 +42,7 @@
                     Category
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('admin.addcategory') }}">
+                    <a class="dropdown-item" href="{{ route('admin.addcategory1') }}">
                         Add
                     </a>
                     <a class="dropdown-item" href="{{ route('admin.listcategory') }}">

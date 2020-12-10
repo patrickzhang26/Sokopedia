@@ -14,9 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
         $this->call(ProductsTableSeeder::class);
-<<<<<<< HEAD
-        // $this->call(AdminsTableSeeder::class);
-=======
->>>>>>> 37b4254f4b350835cd5069b9f5e96eb66df3dbf1
+        //ada yg gw hapus supaya bisa seeding (AdminTableSeeder)
     }
 }
