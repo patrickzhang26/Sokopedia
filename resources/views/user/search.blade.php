@@ -44,7 +44,7 @@
                 <img class="card-img-top product-img-store mx-auto" src="{{asset('storage/images/'.$p->image)}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ $p->name }}</h5>
-                <p class="card-text">IDR {{ $p->price }}</p>
+                <p class="card-text">Rp {{ number_format($p->price) }}</p>
                 </div>
                 <div class="card-footer">
                     <a href="{{ url('user/detail/'.$p->id) }}" class="btn btn-green btn-lg btn-block">Product Detail</a>
