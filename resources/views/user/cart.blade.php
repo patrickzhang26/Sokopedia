@@ -46,8 +46,8 @@
                                         <h5>Rp {{ number_format($row['price'] * $row['qty']) }}</h5>
                                     </td>
                                     <td>
-                                        <button class="btn btn-green">Update</button>
-                                        <a href="{{ url('user/cart/'.$row['id']) }}" class="btn btn-danger ">Delete</a>
+                                        <button class="btn btn-green"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                        <a href="{{ url('user/cart/'.$row['id']) }}" class="btn btn-danger "><i class="fa fa-trash" aria-hidden="true"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
