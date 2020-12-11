@@ -41,7 +41,7 @@
         <div class="card-deck">
             @foreach($products as $p)
             <div class="card">
-                <img class="card-img-top product-img-store mx-auto" src="{{asset('storage/images/'.$p->image)}}" alt="Card image cap">
+                <img class="card-img-top product-img-store mx-auto" src="{{asset('storage/images/'.$p->image)}}" alt="{{ $p->name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ $p->name }}</h5>
                 <p class="card-text">Rp {{ number_format($p->price) }}</p>

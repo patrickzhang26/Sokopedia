@@ -12,7 +12,7 @@ class TransactionHeader extends Model
      * @var array
      */
     protected $fillable = [
-        'email', 'created_at'
+        'email'
     ];
 
     public function user(){

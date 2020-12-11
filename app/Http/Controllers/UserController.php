@@ -97,13 +97,25 @@ class UserController extends Controller
     }
 
     public function showHistory(Request $request){
+        $email = $request->cookie('email');
         $carts = $this->getCart(); 
         $counts = collect($carts);
         $count = $counts->count();
-        
-        $email = $request->cookie('email');
-        $transaction = ;
 
-        return view('user.history', compact('count'));
+        $transaction = TransactionHeader::where('email','like',$email)->get();
+
+        return view('user.history', ['transaction' => $transaction, 'count' => $count]);
+    }
+
+    public function historyDetail(Request $request, $id){
+        
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
+
+        $selected = TransactionDetail::where('transaction_id','like',$id)->paginate(3);
+        // dd($selected);
+
+        return view('user.historydetail', ['selected' => $selected, 'count' => $count]);
     }
 }

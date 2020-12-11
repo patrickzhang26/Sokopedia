@@ -101,10 +101,8 @@ class CartController extends Controller
             
             $transactionHeader = TransactionHeader::create([
                 'email' => $email,
-                'created_at' => $create_at_date,
             ]);
 
-            //LOOPING DATA DI CARTS
             foreach ($carts as $row) {
                 TransactionDetail::create([
                     'transaction_id' => $transactionHeader->id,

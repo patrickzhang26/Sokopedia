@@ -16,8 +16,7 @@ class CreateTransactionheadersTable extends Migration
         Schema::create('transactionheaders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email');
-            $table->date('created_at')->nullable();
-            $table->date('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 

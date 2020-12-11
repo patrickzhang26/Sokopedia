@@ -20,5 +20,10 @@ class TransactionDetail extends Model
         return $this->belongsTo(TransactionHeader::class);
     }
 
+    public function product(){
+        
+        return $this->belongsTo(Product::class);
+    }
+
     protected $table = 'transactiondetails';
 }
