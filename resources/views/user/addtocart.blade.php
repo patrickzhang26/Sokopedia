@@ -28,7 +28,7 @@
             @csrf
             <input class="form-control mx-lg-2" type="text" name="search" value="{{ old('search') }}" placeholder="Search" >
             <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
-            <a href="{{ route('user.cartdetail') }}" class="btn btn-green my-2 my-sm-0 ml-2" ><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge badge-light ml-2">{{ $count }}</span></a>
+            <a href="{{ route('user.cartdetail') }}" class="btn btn-green my-2 my-sm-0 ml-2" ><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge badge-light ml-2">{{ $count }}</span></span></a>
             <a href="{{ route('user.history') }}" class="btn btn-green my-2 my-sm-0 ml-2" >History</a>
         </form>
         <ul class="navbar-nav ml-0">
@@ -58,9 +58,23 @@
                 </div>
                 <div class="col-md-6 container-product">
                     <h1 class="mt-5 detail-title ml-3">{{ $s->name }}</h1>
-                    <h4 class="mt-5 pricetag ml-3">Price: Rp {{ number_format($s->price) }}</h4>
-                    <h5 class="mt-5 ml-3">Description: {{ $s->description}}</h5>
-                    <a href="{{ url('user/detail/cart/'.$s->id) }}" class="btn btn-green btn-left" >Add To Cart</a>
+                    <h4 class="mt-4 pricetag ml-3">Price: Rp {{ number_format($s->price) }}</h4>
+                    <h5 class="mt-4 ml-3">Description: {{ $s->description}}</h5>                    
+                    <div class="col-10">
+                        <form action="{{ route('user.cart') }}" method="POST">
+                            @csrf
+                            <div class="product_count">
+                                <label for="qty" class="col-0 col-form-label mt-4 ml-1">Quantity: </label>
+                                <input type="text" name="qty" id="quantity" maxlength="12" value="1" class="form-control form-control-user">                                                        
+                                <input type="hidden" name="id" value="{{ $s->id }}" class="form-control">                            
+                            </div>
+                                <button class="btn btn-green btn-left">Add To Cart</button>
+                            </form>
+
+                    <!-- <label for="quantity-input" class="col-0 col-form-label mt-4">Quantity: </label>
+                        <input class="form-control form-control-user" type="number" value="0" id="quantity-input"> -->
+                    </div>
+                    <!-- <a href="{{ url('user/detail/cart/add/'.$s->id) }}" class="btn btn-green btn-left" >Add To Cart</a> -->
                 </div>
             </div>
         @endforeach

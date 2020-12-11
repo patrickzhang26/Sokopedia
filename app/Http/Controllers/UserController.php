@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use App\Product;
+use App\User;
+use App\TransactionDetail;
+Use App\TransactionHeader;
 class UserController extends Controller
 {
     
@@ -18,8 +22,25 @@ class UserController extends Controller
     }
 
     public function index() {
-        return view('user.index');
-      }
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
+
+        $products = DB::table('products')->paginate(3);
+
+        // dd($count);
+        return view('user.index', compact('products','count'));
+    }
+
+    public function search(Request $request){
+        $search = $request->search;
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
+        $products = Product::where('name','like',"%".$search."%")->paginate(3);
+
+        return view('user.search',compact('products','count'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -50,40 +71,39 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $selected = Product::where('id','like',$id)->get();
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
+
+        return view('user.detailproduct',compact('selected', 'count'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function addCart($id)
     {
-        //
+        $selected = Product::where('id','like',$id)->get();
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
+
+        return view('user.addtocart',compact('selected', 'count'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    private function getCart(){
+
+        $carts = json_decode(request()->cookie('carts'), true);
+        $carts = $carts != '' ? $carts:[];
+        return $carts;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function showHistory(Request $request){
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
+        
+        $email = $request->cookie('email');
+        $transaction = ;
+
+        return view('user.history', compact('count'));
     }
 }

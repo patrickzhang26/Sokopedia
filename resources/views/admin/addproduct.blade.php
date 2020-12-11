@@ -3,31 +3,48 @@
 @section('title','$okopedia - Add Product')
 
 @section('container')
-<center>
-    <div class="admin_content">
-        <form>
-            <div class="form-group">
-                @csrf
-                <h3>Add Product</h3>
-                <p>Name</p>
-                <input class="form-control-admin" type="text" placeholder="Product Name">
-                <p>Category</p>
-                <select name="category" id="category" class="form-control-admin">
-                    <option value="category1">Category 1</option>
-                    <option value="category2">Category 2</option>
-                    <option value="category3">Category 3</option>
-                </select>
-                <p>Description</p>
-                <input class="form-control-admin" type="text" placeholder="Product Description">
-                <p>Price</p>
-                <input class="form-control-admin" type="number" placeholder="Product Price">
-                <p>Choose File</p>
-                <input type="file" id="productfile" name="productfile"><br><br>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="addproduct">Add Product</button>
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-10 mx-auto">
+                <div class="admin_content">
+                    <form action="{{ route('admin.addproduct2') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @if(session('errors'))
+                            <div class="alert-admin alert-danger alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <div class="form-group">
+                            <h3>Add Product</h3>
+                            <b>Name</b>
+                            <input type="text" name="name" class="form-control-admin" placeholder="Product Name">
+                            <br><b>Category</b>
+                            <select name="category" id="category" class="form-control-admin">
+                                <option value="0">Select Category</option>
+                                @foreach($categories as $cat)
+                                    <option value="{{$cat->name}}">{{$cat->name}}</option>
+                                @endforeach
+                            </select>
+                            <br><b>Description</b>
+                            <input type="text" name="description" class="form-control-admin" placeholder="Product Description">
+                            <br><b>Price</b>
+                            <input type="number" name="price" class="form-control-admin" placeholder="Product Price">
+                            <br><b>Choose file</b>
+                            <br><input type="file" name="image"><br><br>
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="addproduct">Add Product</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
-</center>
 @endsection
 
 </body>

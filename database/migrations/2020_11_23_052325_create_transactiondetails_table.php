@@ -14,7 +14,7 @@ class CreateTransactiondetailsTable extends Migration
     public function up()
     {
         Schema::create('transactiondetails', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->bigInteger('total');
             $table->bigInteger('quantity');
             $table->unsignedBigInteger('transaction_id');
