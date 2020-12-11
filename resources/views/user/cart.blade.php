@@ -39,7 +39,7 @@
                                     <td>
                                         <div class="product_count">
                                             <input type="text" name="qty[]" id="quantity{{ $row['id'] }}" maxlength="12" value="{{ $row['qty'] }}" class="form-control form-control-user ml-6">
-                                            <input type="hidden" name="product_id[]" value="{{ $row['id'] }}" class="form-control">
+                                            <input type="hidden" name="id[]" value="{{ $row['id'] }}" class="form-control">
                                         </div>
                                     </td>
                                     <td>

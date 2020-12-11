@@ -55,8 +55,8 @@ class LoginController extends Controller
         $rememberTokenCookieKey = Auth::getRecallerName();  
         
         Cookie::queue($rememberTokenCookieKey, Cookie::get($rememberTokenCookieKey), $rememberMeExpireTime);  
-        Cookie::queue(Cookie::make('email', Cookie::get('email'), 120));
-        Cookie::queue('password', Cookie::get('password'), 120);
+        Cookie::queue('email', $request->email, 120);
+        Cookie::queue('password', bcrypt($request->password), 120);
 
         $request->session()->regenerate();
 

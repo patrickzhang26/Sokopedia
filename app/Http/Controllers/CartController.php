@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Product;
+use App\User;
+use App\TransactionDetail;
+Use App\TransactionHeader;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class CartController extends Controller
 {
@@ -56,7 +61,7 @@ class CartController extends Controller
 
         $carts = $this->getCart();
         
-        foreach ($request->product_id as $key => $row) {
+        foreach ($request->id as $key => $row) {
             if ($request->qty[$key] == 0) {
                 unset($carts[$row]);
             } else {
@@ -81,5 +86,42 @@ class CartController extends Controller
             return redirect()->back()->withCookie(cookie('carts', '', -1));
         }
        
+    }
+
+    public function checkout(Request $request){
+
+        DB::beginTransaction();
+
+            $email = $request->cookie('email');
+            $user = User::where('email', $email)->first();
+
+            $carts = $this->getCart();
+
+            $create_at_date = date('Y-m-d H:i:s');
+            // dd($create_at_date);
+            
+            $transactionHeader = TransactionHeader::create([
+                'email' => $email,
+                'created_at' => $create_at_date,
+            ]);
+
+            //LOOPING DATA DI CARTS
+            foreach ($carts as $row) {
+                //AMBIL DATA PRODUK BERDASARKAN PRODUCT_ID
+                $product = Product::find($row['id']);
+                //SIMPAN DETAIL ORDER
+                TransactionDetail::create([
+                    'transaction_id' => $transactionHeader->id,
+                    'product_id' => $row['id'],
+                    'total' => $row['price'],
+                    'quantity' => $row['qty'],
+                ]);
+            }
+            
+            //TIDAK TERJADI ERROR, MAKA COMMIT DATANYA UNTUK MENINFORMASIKAN BAHWA DATA SUDAH FIX UNTUK DISIMPAN
+            DB::commit();
+            
+            //REDIRECT KE HALAMAN FINISH TRANSAKSI
+            return redirect('user/home')->withCookie(cookie('carts', '', -1));
     }
 }

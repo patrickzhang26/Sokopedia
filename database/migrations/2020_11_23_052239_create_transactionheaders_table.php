@@ -14,9 +14,10 @@ class CreateTransactionheadersTable extends Migration
     public function up()
     {
         Schema::create('transactionheaders', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('email');
-            $table->timestamps();
+            $table->date('created_at')->nullable();
+            $table->date('updated_at')->nullable();
         });
     }
 
