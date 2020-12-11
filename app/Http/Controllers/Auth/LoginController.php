@@ -64,6 +64,7 @@ class LoginController extends Controller
             ?: redirect()->intended($this->redirectPath());  
       } 
 
+      
     /**
      * Log the user out of the application.
      *
@@ -74,6 +75,6 @@ class LoginController extends Controller
     {
         Auth::guard('web')->logout();
 
-        return redirect('/');
+        return redirect('/')->withCookie(cookie('carts', '', -1));
     }
 }

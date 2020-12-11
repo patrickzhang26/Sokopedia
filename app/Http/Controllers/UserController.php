@@ -20,18 +20,24 @@ class UserController extends Controller
     }
 
     public function index() {
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
 
         $products = DB::table('products')->paginate(3);
 
-        return view('user.index', ['products'=>$products]);
+        // dd($count);
+        return view('user.index', compact('products','count'));
     }
 
     public function search(Request $request){
         $search = $request->search;
-
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
         $products = Product::where('name','like',"%".$search."%")->paginate(3);
 
-        return view('user.search',['products' => $products]);
+        return view('user.search',compact('products','count'));
     }
 
     /**
@@ -64,15 +70,28 @@ class UserController extends Controller
     public function show($id)
     {
         $selected = Product::where('id','like',$id)->get();
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
 
-        return view('user.detailproduct',['selected' => $selected]);
+        return view('user.detailproduct',compact('selected', 'count'));
     }
 
     public function addCart($id)
     {
         $selected = Product::where('id','like',$id)->get();
+        $carts = $this->getCart(); 
+        $counts = collect($carts);
+        $count = $counts->count();
 
-        return view('user.addtocart',['selected' => $selected]);
+        return view('user.addtocart',compact('selected', 'count'));
+    }
+
+    private function getCart(){
+
+        $carts = json_decode(request()->cookie('carts'), true);
+        $carts = $carts != '' ? $carts:[];
+        return $carts;
     }
 
     /**

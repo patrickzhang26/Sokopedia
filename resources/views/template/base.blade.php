@@ -26,7 +26,9 @@
             @csrf
             <input class="form-control mx-lg-2" type="text" name="search" value="{{ old('search') }}" placeholder="Search" >
             <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
-            <a href="{{ route('user.cart') }}" class="btn btn-green my-2 my-sm-0 ml-2" >Cart<span class="badge badge-light ml-1">0</span></a>
+            <a href="{{ route('user.cartdetail') }}" class="btn btn-green my-2 my-sm-0 ml-2" >Cart
+                <span class="badge badge-light ml-1">{{ $count }}</span>
+                </a>
             <a href="{{ route('user.history') }}" class="btn btn-green my-2 my-sm-0 ml-2" >History</a>
         </form>
         <ul class="navbar-nav ml-0">
