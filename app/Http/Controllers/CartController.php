@@ -107,9 +107,6 @@ class CartController extends Controller
 
             //LOOPING DATA DI CARTS
             foreach ($carts as $row) {
-                //AMBIL DATA PRODUK BERDASARKAN PRODUCT_ID
-                $product = Product::find($row['id']);
-                //SIMPAN DETAIL ORDER
                 TransactionDetail::create([
                     'transaction_id' => $transactionHeader->id,
                     'product_id' => $row['id'],
@@ -118,10 +115,8 @@ class CartController extends Controller
                 ]);
             }
             
-            //TIDAK TERJADI ERROR, MAKA COMMIT DATANYA UNTUK MENINFORMASIKAN BAHWA DATA SUDAH FIX UNTUK DISIMPAN
             DB::commit();
             
-            //REDIRECT KE HALAMAN FINISH TRANSAKSI
             return redirect('user/home')->withCookie(cookie('carts', '', -1));
     }
 }
