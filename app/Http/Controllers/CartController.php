@@ -93,7 +93,6 @@ class CartController extends Controller
         DB::beginTransaction();
 
             $email = $request->cookie('email');
-            $user = User::where('email', $email)->first();
 
             $carts = $this->getCart();
 
