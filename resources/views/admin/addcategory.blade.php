@@ -10,7 +10,7 @@
                     <form action="{{ route('admin.addcategory2') }}" method="post">
                         @csrf
                         @if(session('errors'))
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="width: 90%; margin:auto"><br>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="width: 90%; margin:auto"><br>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>

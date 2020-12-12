@@ -1,6 +1,6 @@
 @extends('template.index')
 
-@section('title','$okopedia - Show All Products')
+@section('title','$okopedia - Products')
 
 @section('container')
     <div class="container h-100">
