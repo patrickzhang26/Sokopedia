@@ -55,7 +55,7 @@
                         </table>
                             <tr class="bottom_button">
                                     <td>
-                                    <a href="{{ route('user.checkout') }}" class="btn btn-danger btn-checkout ml-3">Checkout</a>
+                                    <a href="{{ route('user.checkout') }}" class="btn btn-danger btn-checkout ml-3 mb-4">Checkout</a>
                                 </td>
                             </tr>
                         @else
