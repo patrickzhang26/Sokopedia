@@ -10,7 +10,7 @@
                     <form action="{{ route('admin.addproduct2') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @if(session('errors'))
-                            <div class="alert-admin alert-danger alert-dismissible fade show" role="alert">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="width: 90%; margin:auto"><br>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
@@ -19,7 +19,7 @@
                                         <li>{{ $error }}</li>
                                     @endforeach
                                 </ul>
-                            </div>
+                            </div><br>
                         @endif
                         <div class="form-group">
                             <h3>Add Product</h3>
