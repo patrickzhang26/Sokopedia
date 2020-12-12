@@ -274,7 +274,10 @@ img {
 
 .product-img-store {
   height: 240px;
-  width: 50px;
+}
+
+.product-img-hist {
+  height: 240px;
 }
 
 svg {
@@ -5266,7 +5269,12 @@ a.navbar-brand-admin {
 .card-img-top,
 .card-img-bottom {
   flex-shrink: 0;
-  width: 50%;
+}
+
+.card-img2,
+.card-img-top2,
+.card-img-bottom2 {
+  flex-shrink: 0;
 }
 
 .card-img,

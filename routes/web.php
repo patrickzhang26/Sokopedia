@@ -25,6 +25,7 @@ Route::group(['prefix' => 'user', 'middleware' => ['role:user']], function() {
     Route::get('/detail/{id}','UserController@show');
     Route::get('/cart/detail','CartController@showCart')->name('user.cartdetail');
     Route::get('/history','UserController@showHistory')->name('user.history');
+    Route::get('/history/detail/{id}','UserController@historyDetail')->name('user.historyDetail');
     Route::get('/search','UserController@search')->name('user.search');
     Route::get('/detail/cart/{id}','UserController@addCart')->name('user.addcart');
     Route::post('/cart','CartController@addItem')->name('user.cart');

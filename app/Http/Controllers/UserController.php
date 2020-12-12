@@ -107,7 +107,7 @@ class UserController extends Controller
         return view('user.history', ['transaction' => $transaction, 'count' => $count]);
     }
 
-    public function historyDetail(Request $request, $id){
+    public function historyDetail($id){
         
         $carts = $this->getCart(); 
         $counts = collect($carts);
