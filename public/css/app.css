@@ -274,10 +274,12 @@ img {
 
 .product-img-store {
   height: 240px;
+  width: 200px;
 }
 
 .product-img-hist {
   height: 240px;
+  width: 200px;
 }
 
 svg {
